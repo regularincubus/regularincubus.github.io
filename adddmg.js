@@ -1,3 +1,4 @@
+// Stelle sicher, dass das Skript erst nach dem Laden der HTML-Elemente ausgeführt wird
 document.addEventListener("DOMContentLoaded", function () {
     // Funktion hier innerhalb von DOMContentLoaded definieren
     function calculateAddDMG() {
@@ -15,4 +16,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Button-EventListener hinzufügen
     document.getElementById("calculateButton").addEventListener("click", calculateAddDMG);
-);
+});
