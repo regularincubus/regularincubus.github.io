@@ -17,6 +17,7 @@
         <div class = "button"> 
             <label>scaling:<input type="number" id="ability" value="0"></label>
         </div>
+
         <fieldset>
             <legend>Select the following reaction you wish to calculate.</legend>
         <div>
@@ -50,11 +51,12 @@
           </div>
         </fieldset>            
         </div>
-        <p>Additive DMG Calculator</p>
+        <h2>Additive DMG Calculator</h2>
+        <p>Enter the scaling</p>
         <div class="button"> 
         <label>Scaling in percent: <input type="number" id="adddmgscaling" value="0"></label>
         </div>
-        <p>Additive DMG Calculator 2</p>
+        <p>Enter the value of the scaling</p>
         <div class="button"> 
         <label>ATK/DEF/EM/whatever of that person: <input type="number" id="adddmgvalue" value="0"></label>
         </div> 
@@ -63,6 +65,19 @@
 
     <h3>Result: <span id="result">-</span></h3>
     <script src="/adddmg.js"></script>
+        
+    <p>Type in the value of the DMG bonus. Elemental/Physical damage bonus and other (Skill- DMG bonus, Burst DMG-Bonus, etc.) counts too.</p>
+    <div class = "button"> 
+        <label>dmg bonus:<input type="number" id="dmgbonus" value="0"></label>
+    </div>
+    <p>How much DEF gets shredded? (Klee C2, Lisa's burst, etc.)</p>
+    <div class = "button"> 
+        <label>def multiplier:<input type="number" id="defmulti" value="0"></label>
+    </div>
+    <p>How much RES gets shredded? (4pc Deepwood Memories, Xilonen skill, etc.)</p>
+    <div class = "button"> 
+        <label>res multiplier:<input type="number" id="resmulti" value="0"></label>
+    </div>
 
     </body>
 </html>
