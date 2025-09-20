@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8"> <!-- für allmögliche sonderzeichen etc.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly little Damage calculator 0.1</title>
+    <link rel="stylesheet" href="main.css">
+
+    <head>
+        <h1>Silly little Damage Calculator</h1>
+    </head>
+    <body>
+        <p>Type in the value of the stat your character scales off of! (example: Arlecchino has 2368 ATK unbuffed)</p>
+        <div class = "button"> 
+            <label>scalingvalue:<input type="number" id="scalingvalue" value="0"></label>
+        </div>
+        <p>Now add the actual scaling percentage here. (example: Arlecchino has 179.52% (ATK) Charged Attack scaling)</p>
+        <div class = "button"> 
+            <label>scaling:<input type="number" id="ability" value="0"></label>
+        </div>
+
+        <fieldset>
+            <legend>Select the following reaction you wish to calculate.</legend>
+        <div>
+          <div>
+            <input type="radio" id="none" name="arle" />
+            <label for="none">None</label>
+          </div>
+          <div>
+            <input type="radio" id="spread" name="arle" />
+            <label for="spread">Spread</label>
+          </div>
+          <div>
+            <input type="radio" id="aggravate" name="arle" />
+            <label for="aggravate">Aggravate</label>
+          </div>
+          <div>
+            <input type="radio" id="melt" name="arle" />
+            <label for="melt">Melt</label>
+          </div>
+          <div>
+            <input type="radio" id="vape" name="arle" />
+            <label for="vape">Vaporize</label>
+          </div>
+          <div>
+            <input type="radio" id="revmelt" name="arle" />
+            <label for="revmelt">Reverse Melt</label>
+          </div>
+          <div>
+            <input type="radio" id="revvape" name="arle" />
+            <label for="revvape">Reverse Vaporize</label>
+          </div>
+        </fieldset>            
+        </div>
+        <h2>Additive DMG Calculator</h2>
+        <p>Enter the scaling</p>
+        <div class="button"> 
+        <label>Scaling in percent: <input type="number" id="adddmgscaling" value="0"></label>
+        </div>
+        <p>Enter the value of the scaling</p>
+        <div class="button"> 
+        <label>ATK/DEF/EM/whatever of that person: <input type="number" id="adddmgvalue" value="0"></label>
+        </div> 
+
+    <button onclick="calculateAddDMG()">Calculate</button>
+
+    <h3>Result: <span id="result">-</span></h3>
+    <script src="/adddmg.js"></script>
+        
+    <p>Type in the value of the DMG bonus. Elemental/Physical damage bonus and other (Skill- DMG bonus, Burst DMG-Bonus, etc.) counts too.</p>
+    <div class = "button"> 
+        <label>dmg bonus:<input type="number" id="dmgbonus" value="0"></label>
+    </div>
+    <p>How much DEF gets shredded? (Klee C2, Lisa's burst, etc.)</p>
+    <div class = "button"> 
+        <label>def multiplier:<input type="number" id="defmulti" value="0"></label>
+    </div>
+    <p>How much RES gets shredded? (4pc Deepwood Memories, Xilonen skill, etc.)</p>
+    <div class = "button"> 
+        <label>res multiplier:<input type="number" id="resmulti" value="0"></label>
+    </div>
+
+    <button onclick="calculateTotal()">Calculate</button>
+
+    </body>
+</html>
