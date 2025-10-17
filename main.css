@@ -59,6 +59,23 @@ li {
   margin: 8px 0;
 }
 
+li a {
+  display: block;
+  text-decoration: none;
+  color: #4a4e69;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+/* Hover-Effekt */
+li a:hover {
+  color: #9a8c98;
+  background-color: #f3f0f5;
+  transform: scale(1.05);
+}
+
 a {
   text-decoration: none;
   color: #4a4e69;
