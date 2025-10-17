@@ -1,4 +1,4 @@
-/* Grundlayout für Kapitel */
+/* Kapitelcontainer */
 .chapter {
     max-width: 700px;
     margin: 60px auto;
@@ -7,7 +7,7 @@
     color: #222;
   }
   
-  /* Überschrift des Kapitels */
+  /* Kapitelüberschrift */
   .chapter h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -15,50 +15,27 @@
     padding-bottom: 10px;
   }
   
-  /* Unterüberschriften */
-  .chapter h2 {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
   /* Absätze */
   .chapter p {
     margin-bottom: 1em;
   }
   
-  /* Trennlinie oder Zitat */
-  .chapter hr {
-    margin: 40px 0;
-    border: none;
-    border-top: 1px solid #ccc;
-    width: 50%;
-  }
-  
-  /* Rück-Link oder Navigation */
-  .back-link {
-    display: block;
-    margin: 40px auto;
-    text-align: center;
-    color: #4a4e69;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .back-link:hover {
-    color: #9a8c98;
-  }
-  
+  /* Navigation unten */
+  .back-link,
   .next-link {
-    display: block;
-    margin: 40px auto;
-    text-align: center;
-    color: #4a4e69;
+    display: inline-block;
+    margin: 40px 10px 0;
     text-decoration: none;
-    transition: color 0.2s;
+    color: #4a4e69;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
   }
   
+  .back-link:hover,
   .next-link:hover {
+    background-color: #f3f0f5;
     color: #9a8c98;
   }
   
