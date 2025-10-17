@@ -23,7 +23,7 @@ body {
   color: #333;
 }
 
-/* Stil für den Hauptcontainer */
+
 .center-content {
   background-color: #ffffff;
   border-radius: 12px;
@@ -57,6 +57,11 @@ ul {
 
 li {
   margin: 8px 0;
+}
+
+li:hover {
+  color: #9a8c98;
+  transform: scale(1.05);
 }
 
 a {
