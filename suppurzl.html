@@ -17,10 +17,13 @@
   <script>
     // Audiodateien anpassen
     var anzahl = 1000;
+    var ton;
 
     function play() {
+      if (ton) { ton.pause();}
       var nummer = Math.floor(Math.random() * anzahl) + 1;
-      new Audio("audio/chasca (" + nummer + ").wav").play();
+      ton = new Audio("audio/chasca (" + nummer + ").wav");
+      ton.play();
     }
   </script>
 
