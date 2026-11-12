@@ -1,9 +1,100 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppurzl</title>
+
+</head>
+
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <main class="player">
+
+        <button id="playButton"
+                type="button"
+                aria-label="Play">
+
+            <span class="placeholder-icon"></span>
+
+        </button>
+
+        <div id="status" aria-live="polite"></div>
+
+    </main>
+
+
+    <script>
+
+        // Hier deine Audiodateien eintragen
+        const sounds = [
+            "audio/sound-01.mp3",
+            "audio/sound-02.mp3",
+            "audio/sound-03.mp3"
+        ];
+
+        const button = document.getElementById("playButton");
+        const status = document.getElementById("status");
+
+        let currentAudio = null;
+        let lastIndex = -1;
+
+
+        // Zufällige Audiodatei auswählen
+        function getRandomIndex() {
+
+            if (sounds.length === 1) return 0;
+
+            let index;
+
+            do {
+                index = Math.floor(Math.random() * sounds.length);
+            } while (index === lastIndex);
+
+            lastIndex = index;
+
+            return index;
+        }
+
+
+        // Button-Klick
+        button.addEventListener("click", async () => {
+
+            if (sounds.length === 0) return;
+
+            // Vorherigen Sound stoppen
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            // Neuen Sound auswählen
+            const index = getRandomIndex();
+
+            currentAudio = new Audio(sounds[index]);
+
+            status.textContent = "Spielt …";
+
+            try {
+
+                await currentAudio.play();
+
+                currentAudio.addEventListener("ended", () => {
+                    status.textContent = "";
+                }, { once: true });
+
+            } catch (error) {
+
+                console.error("Audio konnte nicht abgespielt werden:", error);
+
+                status.textContent = "Audio konnte nicht geladen werden.";
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
